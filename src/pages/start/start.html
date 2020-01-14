@@ -1,0 +1,45 @@
+<ion-menu [content]="hola">
+  <ion-header>
+    <ion-toolbar color=colormenu>
+   <ion-title> Menu</ion-title>
+   </ion-toolbar>
+ </ion-header>
+   
+    <ion-content>
+
+      <ion-list *ngFor="let profile of profiles">
+        <ion-item>
+        <ion-icon name="{{profile.ICONO}}" item-left></ion-icon>
+        <button color=primary ion-item clear (click)="goTo(profile.ENTRADA)" >
+        <b>{{profile.DESCRIPCION}}</b>
+        </button>
+     </ion-item>
+        
+     </ion-list>
+        
+   </ion-content>
+ </ion-menu>
+ 
+ <ion-header>
+    
+     <ion-navbar>
+       <button ion-button menuToggle icon-only>
+    
+         <ion-icon name='menu'></ion-icon>
+      
+       </button>
+      <ion-title>
+        Inventario de celulares
+      </ion-title>
+    
+     </ion-navbar>
+    
+     </ion-header>
+
+     <ion-content #hola></ion-content> 
+  
+ <ion-content padding>
+     <ion-item-divider color="light" text-wrap><b>Bienvenido {{ id }} - {{ userName }}</b></ion-item-divider>
+  
+ </ion-content>
+ 
